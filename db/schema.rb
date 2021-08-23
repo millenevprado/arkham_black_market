@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_23_180607) do
+ActiveRecord::Schema.define(version: 2021_08_23_183256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2021_08_23_180607) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_evil_artifacts_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "evil_artifacts_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["evil_artifacts_id"], name: "index_orders_on_evil_artifacts_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,4 +48,6 @@ ActiveRecord::Schema.define(version: 2021_08_23_180607) do
   end
 
   add_foreign_key "evil_artifacts", "users"
+  add_foreign_key "orders", "evil_artifacts", column: "evil_artifacts_id"
+  add_foreign_key "orders", "users"
 end
