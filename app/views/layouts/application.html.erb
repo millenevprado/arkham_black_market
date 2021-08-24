@@ -11,8 +11,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
-    <% if params[:action] != 'home' %>
+  <body class="bcolor">
+    <%# Do not show navbar for homepage %>
+    <% unless params[:action] == 'home' || (['devise/registrations', 'devise/sessions', 'devise/passwords'].include? params[:controller]) %>
       <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
