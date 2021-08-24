@@ -8,5 +8,6 @@ class EvilArtifactsController < ApplicationController
   end
 
   def show
+    @evil_artifact = EvilArtifact.find(params[:id])
   end
 end
