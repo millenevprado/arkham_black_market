@@ -1,12 +1,9 @@
 <div class="container">
-  <h1>All Evil Artifacts</h1>
+  <h1>The best products for the nastiest intetions</h1>
 
-  <% @evil_artifacts.each do |product| %>
+  <% @evil_categories.each do |category| %>
     <p>
-      <%= product.name %>
-      <%= product.price %>
-      <%= product.description %>
+      <%= link_to category, artifacts_of_a_category_evil_artifacts_path(category) %>
     </p>
-
   <% end %>
 </div>
