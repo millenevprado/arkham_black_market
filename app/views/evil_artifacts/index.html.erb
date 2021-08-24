@@ -1,10 +1,12 @@
-<h1>All Evil Artifacts</h1>
+<div class="container">
+  <h1>All Evil Artifacts</h1>
 
-<% @evil_artifacts.each do |product| %>
-  <p>
-    <%= product.name %>
-    <%= product.price %>
-    <%= product.description %>
-  </p>
+  <% @evil_artifacts.each do |product| %>
+    <p>
+      <%= product.name %>
+      <%= product.price %>
+      <%= product.description %>
+    </p>
 
-<% end %>
+  <% end %>
+</div>
