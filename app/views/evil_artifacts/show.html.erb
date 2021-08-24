@@ -5,3 +5,4 @@
   <p><%= "Price: #{@evil_artifact.price}" %><p>
   <p><%= "Owner: #{@evil_artifact.user.codename}" %><p>
 </div>
+<%= link_to 'Buy', evil_artifact_orders_path(@evil_artifact) %>
