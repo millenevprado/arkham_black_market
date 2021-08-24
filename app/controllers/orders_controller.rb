@@ -6,7 +6,10 @@ class OrdersController < ApplicationController
     if order.save
       redirect_to orders_path(@order)
     else
-      render :new
+      redirect_to evil_artifact_path(@order)
     end
+  end
+
+  def update
   end
 end
