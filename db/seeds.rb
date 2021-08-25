@@ -12,34 +12,57 @@ User.destroy_all
 
 puts 'Creating users...'
 
-penguin = User.create!(codename: 'Penguin', email: 'penguin@gotham.com', password: '123321')
+penguin = User.create!(codename: 'Penguin', email: 'penguin@gotham.com', password: '123456')
+bane = User.create!(codename: 'Bane', email: 'bane@gotham.com', password: '123456')
+joker = User.create!(codename: 'Joker', email: 'joker@gotham.com', password: '123456')
+scarecrow = User.create!(codename: 'Scarecrow', email: 'scarecrow@gotham.com', password: '123456')
+harley_quinn = User.create!(codename: 'Harley Quinn', email: 'harleyquinn@gotham.com', password: '123456')
+riddler = User.create!(codename: 'Riddler', email: 'riddler@gotham.com', password: '123456')
 puts 'Creating products...'
 
 EvilArtifact.create!(
-  name: 'Gas Bomb',
-  description: 'A gas bomb to mess with your enemies',
-  category: 'Explosives', price: 100.50, user: penguin
+  name: 'Dynamite',
+  description: 'For the moments you want to watch the whole world burn, but you want it to be fast and simple ;)',
+  category: 'Explosives',
+  price: 100.50,
+  user: joker
 )
 EvilArtifact.create!(
-  name: 'Poison',
-  description: 'Death poison instante kill',
+  name: 'Super-soldier drug',
+  description: 'In the right dosage, increases physical strength to the point where it is possible to break a skull with your bare hands.',
   price: 150.25,
   category: 'Poison',
-  user: penguin
+  user: bane
 )
 EvilArtifact.create!(
   name: 'Machine Gun',
-  description: 'A letal weapon, easy to load',
+  description: 'An elegant and letal weapon, easy to load.',
   price: 250.10,
   category: 'Fire Guns',
   user: penguin
 )
 EvilArtifact.create!(
-  name: 'hallucinogenic',
-  description: 'to bring your enemies their worst nightmares',
+  name: 'Nightmare',
+  description: 'To bring life your enemies worst nightmares',
   category: 'Hallucinogenic',
   price: 350.00,
-  user: penguin
+  user: scarecrow
+)
+
+EvilArtifact.create!(
+  name: 'Baseball Bat',
+  description: "A simple and light everyday weapon, ideal for walking around in public without attracting the attention of authorities. With this weapon no one will 'bat' an eye",
+  category: 'Meele Weapon',
+  price: 100,
+  user: harley_quinn
+)
+
+EvilArtifact.create!(
+  name: 'Win-Win puzzle',
+  description: "If your enemy deciphers the puzzle he dies and if he can't he dies too.",
+  category: 'Pull or Prank',
+  price: 100,
+  user: riddler
 )
 
 puts "#{EvilArtifact.count} products created!"

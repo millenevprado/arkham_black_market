@@ -2,7 +2,7 @@ class EvilArtifact < ApplicationRecord
   belongs_to :user
   has_many :users, through: :orders
 
-  CATEGORIES = ['Poison', 'Fire Guns', 'Meele Guns', 'Hallucinogenic', 'Explosives', 'Pull or Prank'].freeze
+  CATEGORIES = ['Poison', 'Fire Guns', 'Meele Weapon', 'Hallucinogenic', 'Explosives', 'Pull or Prank'].freeze
   validates :name, :description, :price, :category, presence: true
   validates :description, length: { minimum: 10 }
   validates :price, numericality: { only_float: true }
