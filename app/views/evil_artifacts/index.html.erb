@@ -13,7 +13,7 @@
                 <div class="col-3">
                   <div class="card-category" style="background-image: url(<%= asset_path("#{category.downcase.gsub(' ', '_')}.png")%>)">
                     <h1 class="text-danger">
-                      <%= link_to category, artifacts_of_a_category_evil_artifacts_path(category) %>
+                      <%= link_to category, artifacts_of_a_category_evil_artifacts_path(category), class:'text-danger' %>
                     </h1>
                   </div>
                 </div>
@@ -31,6 +31,5 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+    <%= link_to 'I want to sell!', new_evil_artifact_path, class: 'btn btn-danger mt-4' %>
   </div>
-
-  <%= link_to 'I want to sell!', new_evil_artifact_path, class: 'btn btn-danger' %>
