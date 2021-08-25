@@ -1,15 +1,20 @@
-<div>
-  <p><%= "Name: #{@evil_artifact.name}" %></p>
-  <p><%= "Descripiotion: #{@evil_artifact.description}" %><p>
-  <p><%= "Category: #{@evil_artifact.category}" %><p>
-  <p><%= "Price: #{@evil_artifact.price}" %><p>
-  <p><%= "Owner: #{@evil_artifact.user.codename}" %><p>
-  <%= link_to 'Buy', new_evil_artifact_order_path(@evil_artifact), class: 'btn btn-danger' %>
-</div>
-
-<% if current_user == @evil_artifact.user %>
-  <div>
-    <%= link_to 'Edit an artifact',  edit_evil_artifact_path(@evil_artifact), class: 'btn btn-danger' %>
-    <%= link_to 'Detete this artifact', evil_artifact_path(@evil_artifact), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this item?' } %>
+<div class="container my-5 product-show">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="">
+      <h2><%= "#{@evil_artifact.name}" %></h2>
+      <p><%= "Descripiotion: #{@evil_artifact.description}" %><p>
+      <p><%= "Category: #{@evil_artifact.category}" %><p>
+      <p><%= "Price: $#{@evil_artifact.price}" %><p>
+      <p><%= "Sold by: #{@evil_artifact.user.codename}" %><p>
+    </div>
+    <div>
+      <%= link_to 'Buy', new_evil_artifact_order_path(@evil_artifact), class: 'btn btn-red' %>
+    </div>
   </div>
-<% end %>
+    <% if current_user == @evil_artifact.user %>
+      <div>
+        <%= link_to 'Edit an artifact',  edit_evil_artifact_path(@evil_artifact), class: 'btn btn-red mt-3' %>
+        <%= link_to 'Detete this artifact', evil_artifact_path(@evil_artifact), method: :delete, class: 'btn btn-red mt-3', data: { confirm: 'Are you sure you want to delete this item?' } %>
+      </div>
+    <% end %>
+</div>
