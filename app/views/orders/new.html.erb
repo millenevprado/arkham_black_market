@@ -1,5 +1,9 @@
 <h3>Confirm your order</h3>
 
+<%= simple_form_for ([@evil_artifact, @order]) do |f| %>
+  <%= f.input :quantity, placeholder: 'nº of itens' %>
+  <%= f.submit 'Confirm' %>
+<% end %>
 <table class="table table-dark">
   <thead>
     <tr>
@@ -7,18 +11,14 @@
       <th scope="col">Product</th>
       <th scope="col">Salesman</th>
       <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Total Price</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td><%= @order.evil_artifact.name %></td>
-      <td><%= @order.evil_artifact.user.codename %></td>
-      <td><%= @order.evil_artifact.price %></td>
-      <td><%= @order.quantity %></td>
-      <td><%= @order.total %></td>
+      <td><%= @evil_artifact.name %></td>
+      <td><%= @evil_artifact.user.codename %></td>
+      <td><%= @evil_artifact.price %></td>
     </tr>
   </tbody>
 </table>
