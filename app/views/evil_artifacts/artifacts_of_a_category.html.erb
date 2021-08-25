@@ -3,17 +3,21 @@
   <h1 class="text-danger">POISON</h1>
 </div>
 <div class="container my-3">
-  <div class="card-product">
-    <%= image_tag asset_path('poison_product.jpg')%>
-      <div class="card-product-infos">
-        <% @evil_artifacts.each do |artifact| %>
-          <%= link_to evil_artifact_path(artifact) do %>
-            <h2><%= artifact.name %></h2>
-            <p><%= "$#{artifact.price}" %><p>
-            <p><%= "Owner: #{artifact.user.codename}" %><p>
-          <% end %>
-        <% end %>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6">
+      <div class="card-product">
+        <%= image_tag asset_path('poison_product.jpg')%>
+          <div class="card-product-infos">
+            <% @evil_artifacts.each do |artifact| %>
+              <%= link_to evil_artifact_path(artifact) do %>
+                <h2><%= artifact.name %></h2>
+                <p><%= "$#{artifact.price}" %><p>
+                <p><%= "Sold by #{artifact.user.codename}" %><p>
+              <% end %>
+            <% end %>
+          </div>
       </div>
+    </div>
   </div>
 
 <%= link_to 'Back', evil_artifacts_path, class:'btn btn-red mt-3' %>
