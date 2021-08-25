@@ -3,33 +3,33 @@
     <h1>The best products for the nastiest intetions</h1>
 </div>
 
-  <div class="container m-5">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <% @evil_categories.each_slice(3) do |categories| %>
-          <div class="carousel-item <%= @evil_categories.first == categories.first ? 'active' : '' %>">
-            <div class="row d-flex justify-content-center">
-              <% categories.each do |category| %>
-                <div class="col-3">
-                  <div class="card-category" style="background-image: url(<%= asset_path("#{category.downcase.gsub(' ', '_')}.png")%>)">
-                    <h1 class="text-danger">
-                      <%= link_to category, artifacts_of_a_category_evil_artifacts_path(category), class:'text-danger' %>
-                    </h1>
-                  </div>
+<div class="container m-5">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <% @evil_categories.each_slice(3) do |categories| %>
+        <div class="carousel-item <%= @evil_categories.first == categories.first ? 'active' : '' %>">
+          <div class="row d-flex justify-content-center">
+            <% categories.each do |category| %>
+              <div class="col-3">
+                <div class="card-category" style="background-image: url(<%= asset_path("#{category.downcase.gsub(' ', '_')}.png")%>)">
+                  <h1 class="text-danger">
+                    <%= link_to category, artifacts_of_a_category_evil_artifacts_path(category), class:'text-danger' %>
+                  </h1>
                 </div>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
-        <% end %>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        </div>
+      <% end %>
     </div>
-    <%= link_to 'I want to sell!', new_evil_artifact_path, class: 'btn btn-red mt-4' %>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
+  <%= link_to 'I want to sell!', new_evil_artifact_path, class: 'btn btn-red mt-4' %>
+</div>
