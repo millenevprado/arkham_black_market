@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_24_164251) do
+ActiveRecord::Schema.define(version: 2021_08_25_163758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(version: 2021_08_24_164251) do
 
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "evil_artifacts_id", null: false
+    t.bigint "evil_artifact_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["evil_artifacts_id"], name: "index_orders_on_evil_artifacts_id"
+    t.integer "quantity"
+    t.index ["evil_artifact_id"], name: "index_orders_on_evil_artifact_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -49,6 +50,6 @@ ActiveRecord::Schema.define(version: 2021_08_24_164251) do
   end
 
   add_foreign_key "evil_artifacts", "users"
-  add_foreign_key "orders", "evil_artifacts", column: "evil_artifacts_id"
+  add_foreign_key "orders", "evil_artifacts"
   add_foreign_key "orders", "users"
 end

@@ -4,6 +4,7 @@
   <p><%= "Category: #{@evil_artifact.category}" %><p>
   <p><%= "Price: #{@evil_artifact.price}" %><p>
   <p><%= "Owner: #{@evil_artifact.user.codename}" %><p>
+  <%= link_to 'Buy', new_evil_artifact_order_path(@evil_artifact), class: 'btn btn-danger' %>
 </div>
 
 <% if current_user == @evil_artifact.user %>
