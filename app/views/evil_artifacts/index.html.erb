@@ -4,7 +4,9 @@
 </div>
 
 <div class="container my-5">
-  <%= link_to 'I want to sell!', new_evil_artifact_path, class: 'btn btn-red mb-5 float-right' %>
+  <div class="d-flex justify-content-end">
+    <%= link_to 'I want to sell!', new_evil_artifact_path, class: 'btn btn-red mb-5' %>
+  </div>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <% @evil_categories.each_slice(3) do |categories| %>
@@ -34,4 +36,3 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div>
