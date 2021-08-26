@@ -7,7 +7,7 @@
   <div class="col-12 col-md-8">
     <% @evil_artifacts.each do |artifact| %>
         <div class="card-product justify-content-between mb-3">
-          <%= image_tag asset_path('poison_product.jpg')%>
+        <%= artifact.photos.empty? ? (image_tag 'poison_product.jpg') : (cl_image_tag artifact.photos.first.key) %>
             <div class="card-product-infos">
 
                 <%= link_to evil_artifact_path(artifact), class:'text-decoration-none' do %>
@@ -23,5 +23,3 @@
     <% end %>
     <%= link_to 'Back', evil_artifacts_path, class:'btn btn-red mt-3' %>
   </div>
-  </div>
-</div>

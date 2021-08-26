@@ -22,3 +22,5 @@
     </tr>
   </tbody>
 </table>
+
+<%= @order.evil_artifact.photos.empty? ? (image_tag 'poison_product.jpg') : (cl_image_tag @order.evil_artifact.photos.first.key) %>
