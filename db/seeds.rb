@@ -1,3 +1,5 @@
+require "open-uri"
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -11,6 +13,12 @@ EvilArtifact.destroy_all
 User.destroy_all
 
 puts 'Creating users...'
+penguin_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+bane_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+joker_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+scarecrow_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+harley_quinn_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+riddler_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 
 penguin = User.create!(codename: 'Penguin', email: 'penguin@gotham.com', password: '123456')
 bane = User.create!(codename: 'Bane', email: 'bane@gotham.com', password: '123456')
@@ -18,6 +26,20 @@ joker = User.create!(codename: 'Joker', email: 'joker@gotham.com', password: '12
 scarecrow = User.create!(codename: 'Scarecrow', email: 'scarecrow@gotham.com', password: '123456')
 harley_quinn = User.create!(codename: 'Harley Quinn', email: 'harleyquinn@gotham.com', password: '123456')
 riddler = User.create!(codename: 'Riddler', email: 'riddler@gotham.com', password: '123456')
+
+penguin.photo.attach(io: penguin_photo, filename: "penguin.png", content_type: 'image/png')
+penguin.save
+bane.photo.attach(io: bane_photo, filename: "bane.png", content_type: 'image/png')
+bane.save
+joker.photo.attach(io: joker_photo, filename: "joker.png", content_type: 'image/png')
+joker.save
+scarecrow.photo.attach(io: scarecrow_photo, filename: "scarecrow.png", content_type: 'image/png')
+scarecrow.save
+harley_quinn.photo.attach(io: harley_quinn_photo, filename: "harley_quinn.png", content_type: 'image/png')
+harley_quinn.save
+riddler.photo.attach(io: riddler_photo, filename: "riddler.png", content_type: 'image/png')
+riddler.save
+
 puts 'Creating products...'
 
 EvilArtifact.create!(
