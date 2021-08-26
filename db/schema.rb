@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 2021_08_26_144931) do
 
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "evil_artifact_id", null: false
+    t.bigint "evil_artifacts_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "quantity"
-    t.index ["evil_artifact_id"], name: "index_orders_on_evil_artifact_id"
+    t.index ["evil_artifacts_id"], name: "index_orders_on_evil_artifacts_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -72,6 +72,6 @@ ActiveRecord::Schema.define(version: 2021_08_26_144931) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "evil_artifacts", "users"
-  add_foreign_key "orders", "evil_artifacts"
+  add_foreign_key "orders", "evil_artifacts", column: "evil_artifacts_id"
   add_foreign_key "orders", "users"
 end
