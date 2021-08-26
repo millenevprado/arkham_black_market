@@ -13,12 +13,12 @@ EvilArtifact.destroy_all
 User.destroy_all
 
 puts 'Creating users...'
-penguin_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-bane_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+penguin_photo = URI.open('https://static.wikia.nocookie.net/batman/images/9/97/Penguin.png/revision/latest?cb=20150503152433&path-prefix=pt-br')
+bane_photo = URI.open('https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2016/09/legiao_2HTuhnEVkj8CzBZy3Pi_K6cd0mpfoUONsYFLw7r4b9.jpg.jpeg')
 joker_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-scarecrow_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-harley_quinn_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-riddler_photo = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+scarecrow_photo = URI.open('https://cdn.quotesgram.com/img/84/76/164255552-288323d.jpg')
+harley_quinn_photo = URI.open('https://avatarfiles.alphacoders.com/158/158103.jpg')
+riddler_photo = URI.open('https://static.wikia.nocookie.net/batman/images/3/32/Charada.png/revision/latest/scale-to-width-down/265?cb=20150430140527&path-prefix=pt-br')
 
 penguin = User.create!(codename: 'Penguin', email: 'penguin@gotham.com', password: '123456')
 bane = User.create!(codename: 'Bane', email: 'bane@gotham.com', password: '123456')
