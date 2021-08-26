@@ -49,6 +49,6 @@ class EvilArtifactsController < ApplicationController
   private
 
   def evil_artifact_params
-    params.require(:evil_artifact).permit(:name, :description, :price, :category)
+    params.require(:evil_artifact).permit(:name, :description, :price, :category, photos: [])
   end
 end

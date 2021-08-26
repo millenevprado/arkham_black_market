@@ -1,6 +1,8 @@
 class EvilArtifact < ApplicationRecord
   belongs_to :user
+  has_many :orders, dependent: :destroy
   has_many :users, through: :orders
+  has_many_attached :photos
 
   CATEGORIES = ['Poison', 'Fire Guns', 'Meele Weapon', 'Hallucinogenic', 'Explosives', 'Pull or Prank'].freeze
   validates :name, :description, :price, :category, presence: true
