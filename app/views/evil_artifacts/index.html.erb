@@ -7,32 +7,15 @@
   <div class="d-flex justify-content-end">
     <%= link_to 'I want to sell!', new_evil_artifact_path, class: 'btn btn-red mb-5' %>
   </div>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <% @evil_categories.each_slice(3) do |categories| %>
-        <div class="carousel-item <%= @evil_categories.first == categories.first ? 'active' : '' %>">
-          <div class="row d-flex justify-content-center">
-            <% categories.each do |category| %>
-              <div class="col-3">
-                <div class="card mx-1" style="width: 15rem;">
-                  <%= image_tag category_image(category), style: "width: 14.9rem; height: 20rem" %>
-                  <div class="card-body text-center my-card-body">
-                    <h5 class="card-title"><%= category %></h5>
-                    <%= link_to category, artifacts_of_a_category_evil_artifacts_path(category), class:'btn btn-red' %>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
+  <div class="owl-carousel">
+    <% @evil_categories.each do |category| %>
+      <div class="card mx-1">
+        <%= image_tag category_image(category), style: "height: 20rem" %>
+        <div class="card-body text-center my-card-body">
+          <h5 class="card-title"><%= category %></h5>
+          <%= link_to category, artifacts_of_a_category_evil_artifacts_path(category), class:'btn btn-red' %>
         </div>
-      <% end %>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+      </div>
+    <% end %>
   </div>
+</div>
