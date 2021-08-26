@@ -1,9 +1,10 @@
 <div class="position-relative">
-  <div class="card-category card-large" style="background-image: url(<%= asset_path('homepage_cover.jpg')%>)">
+  <div class="card-category card-large" style="background-image: url(<%= asset_path('https://static3.cbrimages.com/wordpress/wp-content/uploads/2019/06/Batman-vs-Thomas-Wayne-Batman-from-DC-comics.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5')%>)">
     <h1>The best products for the nastiest intetions</h1>
 </div>
 
 <div class="container my-5">
+  <%= link_to 'I want to sell!', new_evil_artifact_path, class: 'btn btn-red mb-5 float-right' %>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <% @evil_categories.each_slice(3) do |categories| %>
@@ -11,10 +12,12 @@
           <div class="row d-flex justify-content-center">
             <% categories.each do |category| %>
               <div class="col-3">
-                <div class="card-category" style="background-image: url(<%= asset_path("#{category.downcase.gsub(' ', '_')}.png")%>)">
-                  <h1 class="text-danger">
-                    <%= link_to category, artifacts_of_a_category_evil_artifacts_path(category), class:'text-danger' %>
-                  </h1>
+                <div class="card mx-1" style="width: 15rem;">
+                  <%= image_tag category_image(category), style: "width: 14.9rem; height: 20rem" %>
+                  <div class="card-body text-center my-card-body">
+                    <h5 class="card-title"><%= category %></h5>
+                    <%= link_to category, artifacts_of_a_category_evil_artifacts_path(category), class:'btn btn-red' %>
+                  </div>
                 </div>
               </div>
             <% end %>
@@ -31,5 +34,4 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <%= link_to 'I want to sell!', new_evil_artifact_path, class: 'btn btn-red mt-4' %>
 </div>
