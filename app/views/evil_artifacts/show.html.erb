@@ -6,6 +6,9 @@
       <p><%= "Category: #{@evil_artifact.category}" %><p>
       <p><%= "Price: $#{@evil_artifact.price}" %><p>
       <p><%= "Sold by: #{@evil_artifact.user.codename}" %><p>
+      <% @evil_artifact.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 200, width: 200, crop: :fill %>
+      <% end %>
     </div>
     <div>
       <%= link_to 'Buy', new_evil_artifact_order_path(@evil_artifact), class: 'btn btn-red' %>
