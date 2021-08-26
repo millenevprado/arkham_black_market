@@ -16,7 +16,11 @@
               <% end %>
             </div>
             <div class="vilan-user">
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" id="avatar-card" />
+              <% if artifact.user.photo.attached? %>
+                <%= cl_image_tag artifact.user.photo.key, id: "avatar-card" %>
+              <% else %>
+                <%= image_tag "joker_user.jpg", id: "avatar-card" %>
+              <% end %>
               <p><%= "$#{artifact.price}" %><p>
             </div>
         </div>
