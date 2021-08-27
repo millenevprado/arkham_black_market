@@ -1,18 +1,19 @@
-<div class="container my-5">
-  <div class="row justify-content-center align-items-center">
-    <div class="col-12 col-md-6">
-      <div class="card">
+<div class="order-container">
+  <div class="left">
+  </div>
+  <div class="right">
+    <h2 class="text-center my-5">CONFIRM YOUR ORDER</h2>
+      <div class="card card-order mx-5">
         <h5 class="card-header card-order-header"><%= @evil_artifact.name %></h5>
-        <div class="card-body card-order">
+        <div class="card-body card-order-body">
           <h5 class="card-title"><%= @evil_artifact.description %></h5>
           <p class="card-text">Sold by: <%= @evil_artifact.user.codename %></p>
           <p class="card-text">Unit price: US$ <%= @evil_artifact.price.round(2)%></p>
           <%= simple_form_for ([@evil_artifact, @order]) do |f| %>
             <%= f.input :quantity, placeholder: 'nº of itens' %>
-            <%= f.submit 'Confirm' %>
+            <%= f.submit 'Confirm', class:'btn btn-red mt-2' %>
           <% end %>
         </div>
       </div>
-    </div>
   </div>
 </div>
