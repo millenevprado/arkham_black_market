@@ -1,18 +1,30 @@
 <div class="container my-5 product-show">
   <div class="d-flex justify-content-between align-items-center">
+
     <div class="">
       <h2><%= "#{@evil_artifact.name}" %></h2>
-      <p><%= "Description: #{@evil_artifact.description}" %><p>
-      <p><%= "Category: #{@evil_artifact.category}" %><p>
-      <p><%= "Price: $#{@evil_artifact.price}" %><p>
-      <p><%= "Sold by: #{@evil_artifact.user.codename}" %><p>
+      <p class="text-white"><%= "Descrition: #{@evil_artifact.description}" %><p>
+      <p class="text-white"><%= "Category: #{@evil_artifact.category}" %><p>
+      <p class="text-white"><%= "Sold by: #{@evil_artifact.user.codename}" %><p>
       <% @evil_artifact.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 200, width: 200, crop: :fill %>
       <% end %>
     </div>
-    <div>
-      <%= link_to 'Buy', new_evil_artifact_order_path(@evil_artifact), class: 'btn btn-red' %>
+
+    <div class="card-buy col-md-4">
+      <div class="p-3" style="width: 280px">
+        <%= link_to 'Buy', new_evil_artifact_order_path(@evil_artifact), class: 'btn btn-red w-100' %>
+        <div class="d-flex justify-content-between mt-3 border-bottom">
+          <p><%= "#{@evil_artifact.name} (1)" %></p>
+        </div>
+
+        <div class="d-flex justify-content-between mt-3">
+          <p><strong>Total</strong></p>
+          <p><%= "$#{@evil_artifact.price}" %><p>
+        </div>
+      </div>
     </div>
+
   </div>
     <% if current_user == @evil_artifact.user %>
       <div>
