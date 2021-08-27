@@ -4,13 +4,13 @@
   <div class="right-container-show-order">
     <h2 class="text-center mb-5">ORDER CONFIRMED</h2>
       <div class="card card-order mx-5">
-        <h5 class="card-header card-order-header"><%= @order.evil_artifact.name %></h5>
+        <h5 class="card-header card-order-header"><strong><%= @order.evil_artifact.name %></strong></h5>
         <div class="card-body card-order-body">
           <h5 class="card-title"><%= @order.evil_artifact.description %></h5>
-          <p class="card-text">Sold by: <%= @order.evil_artifact.user.codename %></p>
-          <p class="card-text">Unit price: US$ <%= @order.evil_artifact.price.round(2) %></p>
-          <p class="card-text">Quantity: <%= @order.quantity %></p>
-          <p class="card-text">Total Price: <%= @order.total.round(2) %></p>
+          <p class="card-text"><strong>Sold by:</strong> <%= @order.evil_artifact.user.codename %></p>
+          <p class="card-text"><strong>Unit price:</strong> US$ <%= @order.evil_artifact.price.round(2) %></p>
+          <p class="card-text"><strong>Quantity:</strong> <%= @order.quantity %></p>
+          <p class="card-text"><strong>Total Price:</strong> <%= @order.total.round(2) %></p>
         </div>
       </div>
       <div class="goodbye mt-5">

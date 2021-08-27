@@ -1,8 +1,7 @@
 <div class="order-container">
-  <div class="left", style="background-image: url('<%= @evil_artifact.photos.empty? ? (image_url 'poison_product.jpg') : (cl_image_path @evil_artifact.photos.first.key) %>')">
-
+  <div class="left-container-new-order", style="background-image: url('<%= @evil_artifact.photos.empty? ? (image_url 'poison_product.jpg') : (cl_image_path @evil_artifact.photos.first.key) %>')">
   </div>
-  <div class="right">
+  <div class="right-container-new-order">
     <h2 class="text-center my-5">CONFIRM YOUR ORDER</h2>
       <div class="card card-order mx-5">
         <h5 class="card-header card-order-header"><%= @evil_artifact.name %></h5>
@@ -13,6 +12,7 @@
           <%= simple_form_for ([@evil_artifact, @order]) do |f| %>
             <%= f.input :quantity, placeholder: 'nº of itens' %>
             <%= f.submit 'Confirm', class:'btn btn-red mt-2' %>
+            <%= link_to 'Cancel', evil_artifacts_path, class: 'btn btn-red mt-2 float-right' %>
           <% end %>
         </div>
       </div>

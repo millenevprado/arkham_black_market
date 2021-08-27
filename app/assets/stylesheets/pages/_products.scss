@@ -1,5 +1,13 @@
 .product-show {
-  p {
-    color: white;
+
+  h2 {
+    color: red;
   }
+}
+
+.product-show-center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
