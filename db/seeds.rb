@@ -59,6 +59,9 @@ EvilArtifact.create!(
   description: 'For the moments you want to watch the whole world burn, but you want it to be fast and simple.',
   category: 'Explosives',
   price: 100.50,
+  lethality: 3,
+  versatility: 'One-Handed',
+  reach: 20,
   user: joker
 )
 
@@ -67,6 +70,9 @@ EvilArtifact.create!(
   description: 'Very powerful explosive and easy to handle. The best on the market.',
   category: 'Explosives',
   price: 150.50,
+  lethality: 4,
+  versatility: 'One-Handed',
+  reach: 15,
   user: penguin
 )
 
@@ -75,6 +81,9 @@ EvilArtifact.create!(
   description: 'Highly flammable compound, you can take your time and make an entire hospital catch on fire.',
   category: 'Explosives',
   price: 150.50,
+  lethality: 5,
+  versatility: 'Two-Handed',
+  reach: 30,
   user: joker
 )
 
@@ -82,6 +91,9 @@ EvilArtifact.create!(
   name: 'TNT',
   description: 'Explosive with great chemical stability. With certain handling properties TNT is considered to be the standard comparative convention of bombs and asteroid impacts. Cool huh? Bat will need to call his friends to handle this',
   category: 'Explosives',
+  lethality: 5,
+  versatility: 'Two-Handed',
+  reach: 40,
   price: 150.50,
   user: joker
 )
@@ -91,6 +103,9 @@ EvilArtifact.create!(
   description: 'In the right dosage, increases physical strength to the point where it is possible to break a skull with your bare hands.',
   price: 250.25,
   category: 'Poison',
+  lethality: 0,
+  versatility: 'One-Handed',
+  reach: 0,
   user: bane
 )
 
@@ -99,6 +114,9 @@ EvilArtifact.create!(
   description: "With this drug you can control people's minds and make them do whatever you want",
   price: 700.25,
   category: 'Poison',
+  lethality: 0,
+  versatility: 'One-Handed',
+  reach: 0,
   user: poison_ivy
 )
 
@@ -107,6 +125,9 @@ EvilArtifact.create!(
   description: "Is a toxin, dispersed as a gas that makes victims laugh uncontrollably. Why so serious?",
   price: 600.29,
   category: 'Poison',
+  lethality: 5,
+  versatility: 'One-Handed',
+  reach: 0,
   user: joker
 )
 
@@ -115,6 +136,9 @@ EvilArtifact.create!(
   description: 'An elegant and letal weapon, easy to load.',
   price: 250.15,
   category: 'Fire Guns',
+  lethality: 5,
+  versatility: 'Two-Handed',
+  reach: 30,
   user: penguin
 )
 
@@ -123,6 +147,9 @@ EvilArtifact.create!(
   description: 'Simple and effective pistol, ideal for everyday use',
   price: 200.19,
   category: 'Fire Guns',
+  lethality: 5,
+  versatility: 'Two-Handed',
+  reach: 20,
   user: two_face
 )
 
@@ -131,6 +158,9 @@ EvilArtifact.create!(
   description: 'Oops!...I stole it again. Twin semi-automatic pistols that Jason uses in most of his battles.',
   price: 220.15,
   category: 'Fire Guns',
+  lethality: 5,
+  versatility: 'Two-Handed',
+  reach: 30,
   user: catwoman
 )
 
@@ -139,6 +169,9 @@ EvilArtifact.create!(
   description: 'Ideal for a shooting day in the rain.',
   price: 220.15,
   category: 'Fire Guns',
+  lethality: 5,
+  versatility: 'Two-Handed',
+  reach: 30,
   user: penguin
 )
 
@@ -147,6 +180,9 @@ EvilArtifact.create!(
   description: 'My signature weapon, it induced involuntary and sometimes irrational fear in its victims.',
   category: 'Hallucinogenic',
   price: 350.88,
+  lethality: 0,
+  versatility: 'One-Handed',
+  reach: 0,
   user: scarecrow
 )
 
@@ -155,6 +191,9 @@ EvilArtifact.create!(
   description: 'Wonderful tool to lure your victims into a death trap',
   category: 'Hallucinogenic',
   price: 350.88,
+  lethality: 0,
+  versatility: 'One-Handed',
+  reach: 0,
   user: poison_ivy
 )
 
@@ -163,6 +202,9 @@ EvilArtifact.create!(
   description: 'To trap victims in an illusion of their worst nightmares.',
   category: 'Hallucinogenic',
   price: 350.88,
+  lethality: 0,
+  versatility: 'Two-Handed',
+  reach: 0,
   user: scarecrow
 )
 
@@ -171,6 +213,9 @@ EvilArtifact.create!(
   description: "A simple and light everyday weapon, ideal for walking around in public without attracting the attention of authorities. With this weapon no one will 'bat' an eye ;)",
   category: 'Meele Weapon',
   price: 180.82,
+  lethality: 1,
+  versatility: 'Two-Handed',
+  reach: 2,
   user: harley_quinn
 )
 
@@ -179,6 +224,9 @@ EvilArtifact.create!(
   description: "You can never go wrong with a whip. Ideal for combat or even for a hot private moment ;)",
   category: 'Meele Weapon',
   price: 169.69,
+  lethality: 2,
+  versatility: 'One-Handed',
+  reach: 3,
   user: catwoman
 )
 
@@ -187,6 +235,9 @@ EvilArtifact.create!(
   description: "You can crush some stuff. You can go 'pow, pow, pow' and the person would go 'Ah Ah Ahhh'.",
   category: 'Meele Weapon',
   price: 190.89,
+  lethality: 2,
+  versatility: 'Two-Handed',
+  reach: 1,
   user: harley_quinn
 )
 
@@ -195,6 +246,9 @@ EvilArtifact.create!(
   description: "Have you ever dreamed of using batman's equipment? Say no more! You can take your pick between Batarang, Shark Repellent Bat Spray and Shock Gloves. I know the names are cheesy but the products are good.",
   category: 'Meele Weapon',
   price: 650.49,
+  lethality: 2,
+  versatility: 'Two-Handed',
+  reach: 5,
   user: catwoman
 )
 
@@ -203,6 +257,9 @@ EvilArtifact.create!(
   description: "If your enemy deciphers the puzzle he dies and if he can't he dies too.",
   category: 'Pull or Prank',
   price: 100.55,
+  lethality: 5,
+  versatility: 'Two-Handed',
+  reach: 30,
   user: riddler
 )
 
@@ -211,6 +268,9 @@ EvilArtifact.create!(
   description: "Set of 50 pink batman costumes. Ideal for distracting the police in a bank robbery. It goes well in any heist, besides being super cute.",
   category: 'Pull or Prank',
   price: 180.66,
+  lethality: 0,
+  versatility: 'Two-Handed',
+  reach: 0,
   user: harley_quinn
 )
 
@@ -219,6 +279,9 @@ EvilArtifact.create!(
   description: "Fake death certificate made to perfection, the Gotham authorities will never be suspicious. You can disappear for a while, take on another identity and you won't have any problems.",
   category: 'Pull or Prank',
   price: 250.56,
+  lethality: 0,
+  versatility: 'One-Handed',
+  reach: 0,
   user: two_face
 )
 
@@ -227,6 +290,9 @@ EvilArtifact.create!(
   description: "Need cash? Why not rob a jewelry store or a bank?! You can take your pick, with this kit you can go through any security they may have.",
   category: 'Pull or Prank',
   price: 150.25,
+  lethality: 0,
+  versatility: 'Two-Handed',
+  reach: 0,
   user: catwoman
 )
 
