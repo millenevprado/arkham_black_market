@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { loadDynamicBannerText } from './banner';
+import { loadDynamicGoodbyeMessageText } from './goodbye_message';
 import { initCarousel }  from './owlcarousel';
 
 // Internal imports, e.g:
@@ -34,5 +35,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   loadDynamicBannerText();
+  loadDynamicGoodbyeMessageText();
   initCarousel();
 });

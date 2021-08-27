@@ -1,0 +1,17 @@
+.order-container {
+    display: flex;
+    min-height: 89.5vh;  // checar, pq corta as margins em tela pequena
+}
+
+.left {
+//   background-image: url("https://i2.wp.com/www.comicsbeat.com/wp-content/uploads/2020/09/12-cover.png?fit=683%2C527&ssl=1");
+  background-size: cover;
+  background-position: center center;
+  width: 60%;
+}
+
+@media screen and (max-width: 600px) {
+  .left {
+    display: none;
+  }
+}
