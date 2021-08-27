@@ -9,10 +9,22 @@
 
 .cover-forms {
   // width: 100vw;
-  height: 100vh; // colocar 85 com o footer
+  height: 100%;
   background-size: cover;
-  background-repeat: no-repeat;
+  // background-repeat: no-repeat;
   background-position: center;
   background-image: url('https://www.wallpapertip.com/wmimgs/154-1548354_swarm-of-bats.jpg');
   color: #EA0A02;
+}
+
+.cover-forms-login {
+    // width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  // background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('https://www.wallpapertip.com/wmimgs/154-1548354_swarm-of-bats.jpg');
+  color: #EA0A02;
+
+
 }
