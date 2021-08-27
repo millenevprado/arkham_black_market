@@ -2,17 +2,16 @@
   <div class="banner category" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(<%= asset_path(background_url(params[:category]))%>); background-size: contain;">
   <h1 class="text-white"><%= params[:category] %></h1>
 </div>
-<div class="container my-3">
+<div class="container my-5">
   <div class="row justify-content-center">
-  <div class="col-12 col-md-8">
-    <% @evil_artifacts.each do |artifact| %>
-        <div class="card-product justify-content-between mb-3">
-        <%= artifact.photos.empty? ? (image_tag 'poison_product.jpg') : (cl_image_tag artifact.photos.first.key) %>
+    <div class="col-12 col-md-8">
+      <% @evil_artifacts.each do |artifact| %>
+        <div class="card-product justify-content-between mb-4">
+          <%= artifact.photos.empty? ? (image_tag 'poison_product.jpg') : (cl_image_tag artifact.photos.first.key) %>
             <div class="card-product-infos">
-
-                <%= link_to evil_artifact_path(artifact), class:'text-decoration-none' do %>
-                  <h2><%= artifact.name %></h2>
-                  <p><%= "Sold by #{artifact.user.codename}" %><p>
+              <%= link_to evil_artifact_path(artifact), class:'text-decoration-none' do %>
+                <h2><%= artifact.name %></h2>
+                <p><%= "Sold by #{artifact.user.codename}" %><p>
               <% end %>
             </div>
             <div class="vilan-user">
@@ -21,9 +20,10 @@
               <% else %>
                 <%= image_tag "joker_user.jpg", id: "avatar-card" %>
               <% end %>
-              <p><%= "$#{artifact.price}" %><p>
+              <p><%= "US$ #{artifact.price}" %><p>
             </div>
         </div>
-    <% end %>
+      <% end %>
     <%= link_to 'Back', evil_artifacts_path, class:'btn btn-red mt-3' %>
   </div>
+</div>

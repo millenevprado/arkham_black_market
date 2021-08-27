@@ -23,11 +23,13 @@
 .card-product {
   overflow: hidden;
   height: 120px;
-  background: #F2F2F2;
+  background: #0D1117;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 4px;
   display: flex;
   align-items: center;
   opacity: 0.9;
+  color: #FDFDFD;
   &:hover {
     //box-shadow: 2px 2px 15px rgba(white, 0.5);
     transform: scale(1.05);
@@ -53,7 +55,7 @@
   line-height: 1.4;
   margin-bottom: 0;
   margin-top: 8px;
-  color: #0D0D0D;
+  color: #FDFDFD;
 }
 
 .card-product .card-product-infos {
@@ -70,6 +72,11 @@
 
 .vilan-user {
   padding: 16px;
+}
+
+.card-buy {
+    color: black !important;
+    background-color: white;
 }
 
 .card-order {
