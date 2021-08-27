@@ -19,6 +19,8 @@ joker_photo = URI.open('https://comicvine.gamespot.com/a/uploads/scale_medium/12
 scarecrow_photo = URI.open('https://www.electricferret.com/static/images/cbub/cbub_contender_image/1/1967/1967.jpg')
 harley_quinn_photo = URI.open('https://avatarfiles.alphacoders.com/158/158103.jpg')
 riddler_photo = URI.open('https://static.wikia.nocookie.net/batman/images/3/32/Charada.png/revision/latest/scale-to-width-down/265?cb=20150430140527&path-prefix=pt-br')
+two_face_photo = URI.open('https://lh3.googleusercontent.com/proxy/uHo5bJmPy6Ka-P1nEJfNUsI_EN1aTQQDbX452k0CBskYp6lSQ[…]JpzMgRFbZ-WvHlGqwHRWET17TnM_iciJMGD9Cfi15O1c2xjEB3-OhEeA')
+catwoman_photo = URI.open('http://www.comicbookreligion.com/img/c/a/Catwoman_Selina_Kyle.jpg')
 
 penguin = User.create!(codename: 'Penguin', email: 'penguin@gotham.com', password: '123456')
 bane = User.create!(codename: 'Bane', email: 'bane@gotham.com', password: '123456')
@@ -26,6 +28,8 @@ joker = User.create!(codename: 'Joker', email: 'joker@gotham.com', password: '12
 scarecrow = User.create!(codename: 'Scarecrow', email: 'scarecrow@gotham.com', password: '123456')
 harley_quinn = User.create!(codename: 'Harley Quinn', email: 'harleyquinn@gotham.com', password: '123456')
 riddler = User.create!(codename: 'Riddler', email: 'riddler@gotham.com', password: '123456')
+two_face = User.create!(codename: 'Two Face', email: 'twoface@gotham.com', password: '123456')
+catwoman = User.create!(codename: 'Catwoman', email: 'twoface@gotham.com', password: '123456')
 
 penguin.photo.attach(io: penguin_photo, filename: "penguin.png", content_type: 'image/png')
 penguin.save
@@ -39,6 +43,10 @@ harley_quinn.photo.attach(io: harley_quinn_photo, filename: "harley_quinn.png", 
 harley_quinn.save
 riddler.photo.attach(io: riddler_photo, filename: "riddler.png", content_type: 'image/png')
 riddler.save
+two_face.photo.attach(io: two_face_photo, filename: "two_face.png", content_type: 'image/png')
+two_face.save
+catwoman.photo.attach(io: catwoman_photo, filename: "catwoman.png", content_type: 'image/png')
+catwoman.save
 
 puts 'Creating products...'
 
@@ -73,7 +81,7 @@ EvilArtifact.create!(
 
 EvilArtifact.create!(
   name: 'Baseball Bat',
-  description: "A simple and light everyday weapon, ideal for walking around in public without attracting the attention of authorities. With this weapon no one will 'bat' an eye",
+  description: "A simple and light everyday weapon, ideal for walking around in public without attracting the attention of authorities. With this weapon no one will 'bat' an eye ;)",
   category: 'Meele Weapon',
   price: 100,
   user: harley_quinn
@@ -85,6 +93,14 @@ EvilArtifact.create!(
   category: 'Pull or Prank',
   price: 100,
   user: riddler
+)
+
+EvilArtifact.create!(
+  name: 'Pretty pink bat',
+  description: "Set of 50 pink batman costumes. Ideal for distracting the police in a bank robbery. It goes well in any heist, besides being super cute.",
+  category: 'Pull or Prank',
+  price: 100,
+  user: harley_quinn
 )
 
 puts "#{EvilArtifact.count} products created!"
