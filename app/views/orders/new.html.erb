@@ -1,5 +1,6 @@
 <div class="order-container">
-  <div class="left">
+  <div class="left", style="background-image: url(<%= @evil_artifact.photos.empty? ? (image_tag 'poison_product.jpg') : (cl_image_tag @evil_artifact.photos.first.key) %>)">
+
   </div>
   <div class="right">
     <h2 class="text-center my-5">CONFIRM YOUR ORDER</h2>
@@ -17,3 +18,5 @@
       </div>
   </div>
 </div>
+
+<%# COLOCAR BOTÃO DE BACK! %>

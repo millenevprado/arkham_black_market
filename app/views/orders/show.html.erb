@@ -1,26 +1,19 @@
-<h3>Confirm your order</h3>
+<div class="show-order-container">
+  <div class="left-container-show-order">
+  </div>
+  <div class="right-container-show-order">
+    <h2 class="text-center my-5">ORDER CONFIRMED</h2>
+      <div class="card card-order mx-5">
+        <h5 class="card-header card-order-header"><%= @order.evil_artifact.name %></h5>
+        <div class="card-body card-order-body">
+          <h5 class="card-title"><%= @order.evil_artifact.description %></h5>
+          <p class="card-text">Sold by: <%= @order.evil_artifact.user.codename %></p>
+          <p class="card-text">Unit price: US$ <%= @order.evil_artifact.price.round(2) %></p>
+          <p class="card-text">Quantity: <%= @order.quantity %></p>
+          <p class="card-text">Total Price: <%= @order.total.round(2) %></p>
+        </div>
+      </div>
+      <h5 class="mt-5">We hope you do all sorts of <strong>nasty</strong> things with this product!</h5>
 
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Product</th>
-      <th scope="col">Salesman</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Total Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><%= @order.evil_artifact.name %></td>
-      <td><%= @order.evil_artifact.user.codename %></td>
-      <td><%= @order.evil_artifact.price %></td>
-      <td><%= @order.quantity %></td>
-      <td><%= @order.total %></td>
-    </tr>
-  </tbody>
-</table>
-
-<%= @order.evil_artifact.photos.empty? ? (image_tag 'poison_product.jpg') : (cl_image_tag @order.evil_artifact.photos.first.key) %>
+  </div>
+</div>
