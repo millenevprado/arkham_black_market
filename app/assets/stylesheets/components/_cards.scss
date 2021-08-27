@@ -45,7 +45,7 @@
   font-size: 25px;
   font-weight: bold;
   margin: 0;
-  color: #A61B25;
+  color: #EA0A02;
 }
 
 .card-product p {
@@ -74,6 +74,7 @@
 
 .card-order {
   border: 0.5px solid #0D1117;
+  width: 450px;
 }
 .card-order-body {
   background-color:  #0D1117;
@@ -91,7 +92,7 @@
   border: 1px solid #0D1117;
 
   a {
-    color:#A61B25;
+    color:#EA0A02;
     text-decoration: none;
     font-size: 24px;
   }
@@ -102,7 +103,7 @@
 }
 
 .card-carousel a:hover {
-  color:#cf0816;
+  color:#A61B25;
 }
 
 .card-carousel-body {
