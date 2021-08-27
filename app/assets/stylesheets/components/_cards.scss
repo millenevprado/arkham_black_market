@@ -1,15 +1,18 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 280px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #FDFDFD;
-  font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  h1 {
+    font-size: 50px;
+  }
 }
 
 .card-large {
@@ -72,4 +75,26 @@
 .card-buy {
     color: black !important;
     background-color: white;
+}
+
+.card-carousel {
+  border: 1px solid #0D1117;
+
+  a {
+    color:#A61B25;
+    text-decoration: none;
+    font-size: 24px;
+  }
+
+  img {
+    opacity: 0.9;
+  }
+}
+
+.card-carousel a:hover {
+  color:#cf0816;
+}
+
+.card-carousel-body {
+  background-color: #0D1117;
 }
