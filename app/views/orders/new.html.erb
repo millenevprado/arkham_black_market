@@ -1,5 +1,5 @@
 <div class="order-container">
-  <div class="left", style="background-image: url(<%= @evil_artifact.photos.empty? ? (image_tag 'poison_product.jpg') : (cl_image_tag @evil_artifact.photos.first.key) %>)">
+  <div class="left", style="background-image: url('<%= @evil_artifact.photos.empty? ? (image_url 'poison_product.jpg') : (cl_image_path @evil_artifact.photos.first.key) %>')">
 
   </div>
   <div class="right">
