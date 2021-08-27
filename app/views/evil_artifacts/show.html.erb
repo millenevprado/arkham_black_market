@@ -16,6 +16,9 @@
           <p class="card-text"> <strong>Category:</strong> <%= @evil_artifact.category %></p>
           <p class="card-text"> <strong>Sold by:</strong> <%= @evil_artifact.user.codename %></p>
           <p class="card-text"> <strong>Price:</strong> US$ <%= @evil_artifact.price %></p>
+          <p class="card-text"> <strong>Lethality:</strong> <%= @evil_artifact.lethality %><p>
+          <p class="card-text">  <strong>Reach:</strong> <%= @evil_artifact.reach  %> ft<p>
+          <p class="card-text"> <strong>Versatility:</strong> <%= @evil_artifact.versatility %><p>
           <%= link_to 'Buy', new_evil_artifact_order_path(@evil_artifact), class: 'btn btn-red float-right' %>
           <% if current_user == @evil_artifact.user %>
             <%= link_to 'Edit an artifact',  edit_evil_artifact_path(@evil_artifact), class: 'btn btn-red mr-3' %>

@@ -3,6 +3,9 @@
   <%= simple_form_for(@evil_artifact) do |f| %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.input :name %>
+    <%= f.input :lethality %>
+    <%= f.input :reach %>
+    <%= f.input :versatility %>
     <%= f.input :description %>
     <%= f.input :category, collection: EvilArtifact::CATEGORIES %>
     <%= f.input :price %>
