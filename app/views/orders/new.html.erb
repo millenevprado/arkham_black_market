@@ -1,24 +1,18 @@
-<h3>Confirm your order</h3>
-
-<%= simple_form_for ([@evil_artifact, @order]) do |f| %>
-  <%= f.input :quantity, placeholder: 'nº of itens' %>
-  <%= f.submit 'Confirm' %>
-<% end %>
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Product</th>
-      <th scope="col">Salesman</th>
-      <th scope="col">Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><%= @evil_artifact.name %></td>
-      <td><%= @evil_artifact.user.codename %></td>
-      <td><%= @evil_artifact.price %></td>
-    </tr>
-  </tbody>
-</table>
+<div class="container my-5">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12 col-md-6">
+      <div class="card">
+        <h5 class="card-header card-order-header"><%= @evil_artifact.name %></h5>
+        <div class="card-body card-order">
+          <h5 class="card-title"><%= @evil_artifact.description %></h5>
+          <p class="card-text">Sold by: <%= @evil_artifact.user.codename %></p>
+          <p class="card-text">Unit price: US$ <%= @evil_artifact.price.round(2)%></p>
+          <%= simple_form_for ([@evil_artifact, @order]) do |f| %>
+            <%= f.input :quantity, placeholder: 'nº of itens' %>
+            <%= f.submit 'Confirm' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
