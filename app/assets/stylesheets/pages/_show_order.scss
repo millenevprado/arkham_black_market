@@ -1,0 +1,26 @@
+.show-order-container {
+    display: flex;
+    min-height: 89.5vh;  // checar, pq corta as margins em tela pequena
+}
+
+.left-container-show-order {
+  // background-image: url("https://i2.wp.com/www.comicsbeat.com/wp-content/uploads/2020/09/12-cover.png?fit=683%2C527&ssl=1");
+  background-image: url(https://static.wikia.nocookie.net/fd9db31f-df0f-4dc0-b862-c3a5ab4dcc5f);
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+}
+
+.right-container-show-order {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .left-container-show-order {
+    display: none;
+  }
+}

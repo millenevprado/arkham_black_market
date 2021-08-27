@@ -1,24 +1,22 @@
-<h3>Confirm your order</h3>
+<div class="order-container">
+  <div class="left", style="background-image: url('<%= @evil_artifact.photos.empty? ? (image_url 'poison_product.jpg') : (cl_image_path @evil_artifact.photos.first.key) %>')">
 
-<%= simple_form_for ([@evil_artifact, @order]) do |f| %>
-  <%= f.input :quantity, placeholder: 'nº of itens' %>
-  <%= f.submit 'Confirm' %>
-<% end %>
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Product</th>
-      <th scope="col">Salesman</th>
-      <th scope="col">Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><%= @evil_artifact.name %></td>
-      <td><%= @evil_artifact.user.codename %></td>
-      <td><%= @evil_artifact.price %></td>
-    </tr>
-  </tbody>
-</table>
+  </div>
+  <div class="right">
+    <h2 class="text-center my-5">CONFIRM YOUR ORDER</h2>
+      <div class="card card-order mx-5">
+        <h5 class="card-header card-order-header"><%= @evil_artifact.name %></h5>
+        <div class="card-body card-order-body">
+          <h5 class="card-title"><%= @evil_artifact.description %></h5>
+          <p class="card-text">Sold by: <%= @evil_artifact.user.codename %></p>
+          <p class="card-text">Unit price: US$ <%= @evil_artifact.price.round(2)%></p>
+          <%= simple_form_for ([@evil_artifact, @order]) do |f| %>
+            <%= f.input :quantity, placeholder: 'nº of itens' %>
+            <%= f.submit 'Confirm', class:'btn btn-red mt-2' %>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>
+
+<%# COLOCAR BOTÃO DE BACK! %>
