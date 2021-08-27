@@ -5,8 +5,11 @@ class EvilArtifact < ApplicationRecord
   has_many_attached :photos
 
   CATEGORIES = ['Poison', 'Fire Guns', 'Meele Weapon', 'Hallucinogenic', 'Explosives', 'Pull or Prank'].freeze
-  validates :name, :description, :price, :category, :lethality, :reach, :versatility, presence: true
+  VERSATILITY = ['One-Handed', 'Two-Handed']
+  validates :name, :description, :price, :category, presence: true
   validates :description, length: { minimum: 10 }
+  validates :lethality, inclusion: { in: [0, 1, 2, 3, 4, 5] }
   validates :price, numericality: { only_float: true }
   validates :category, inclusion: { in: CATEGORIES }
+  validates :versatility, inclusion: { in: VERSATILITY }
 end

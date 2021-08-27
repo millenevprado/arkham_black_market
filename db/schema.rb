@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2021_08_27_150923) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "category"
-    t.integer "lethality", default: 0
-    t.integer "reach", default: 0
-    t.string "versatility", default: ""
+    t.integer "lethality"
+    t.integer "reach"
+    t.string "versatility"
     t.index ["user_id"], name: "index_evil_artifacts_on_user_id"
   end
 
